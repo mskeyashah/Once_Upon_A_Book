@@ -1,0 +1,470 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+	<servlet>
+ 		<servlet-name>springrest</servlet-name>
+ 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+ 		<init-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/springrest-servlet.xml</param-value>
+    </init-param>
+ 		<load-on-startup>1</load-on-startup>
+	</servlet>
+ 
+	<servlet-mapping>
+ 		<servlet-name>springrest</servlet-name>
+ 		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	
+	 <servlet>
+        <servlet-name>org.blog.controller.SearchingServlet</servlet-name>
+        <servlet-class>org.blog.controller.SearchingServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.SearchingServlet</servlet-name>
+        <url-pattern>/Searching</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.InsertServlet</servlet-name>
+        <servlet-class>org.blog.controller.InsertServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.InsertServlet</servlet-name>
+        <url-pattern>/Inserting</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.ActionServlet</servlet-name>
+        <servlet-class>org.blog.controller.ActionServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.ActionServlet</servlet-name>
+        <url-pattern>/Actioning</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.DeleteServlet</servlet-name>
+        <servlet-class>org.blog.controller.DeleteServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.DeleteServlet</servlet-name>
+        <url-pattern>/Deleting</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.UpdateServlet</servlet-name>
+        <servlet-class>org.blog.controller.UpdateServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.UpdateServlet</servlet-name>
+        <url-pattern>/Updating</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+
+
+
+    <servlet>
+        <servlet-name>org.blog.controller.IndexServlet</servlet-name>
+        <servlet-class>org.blog.controller.IndexServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.IndexServlet</servlet-name>
+        <url-pattern>/Start</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.StaticSearchServlet</servlet-name>
+        <servlet-class>org.blog.controller.StaticSearchServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.StaticSearchServlet</servlet-name>
+        <url-pattern>/Search</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.StaticInsertServlet</servlet-name>
+        <servlet-class>org.blog.controller.StaticInsertServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.StaticInsertServlet</servlet-name>
+        <url-pattern>/Insert</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.StaticActionServlet</servlet-name>
+        <servlet-class>org.blog.controller.StaticActionServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.StaticActionServlet</servlet-name>
+        <url-pattern>/Action</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.StaticDeleteServlet</servlet-name>
+        <servlet-class>org.blog.controller.StaticDeleteServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.StaticDeleteServlet</servlet-name>
+        <url-pattern>/Delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.StaticUpdateServlet</servlet-name>
+        <servlet-class>org.blog.controller.StaticUpdateServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.StaticUpdateServlet</servlet-name>
+        <url-pattern>/Update</url-pattern>
+    </servlet-mapping>
+
+	
+
+
+
+
+
+    <servlet>
+        <servlet-name>org.blog.controller.BookSearchingServlet</servlet-name>
+        <servlet-class>org.blog.controller.BookSearchingServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.BookSearchingServlet</servlet-name>
+        <url-pattern>/BookSearching</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.BookInsertingServlet</servlet-name>
+        <servlet-class>org.blog.controller.BookInsertingServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.BookInsertingServlet</servlet-name>
+        <url-pattern>/BookInserting</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.BookActionServlet</servlet-name>
+        <servlet-class>org.blog.controller.BookActionServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.BookActionServlet</servlet-name>
+        <url-pattern>/BookActioning</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.BookDeletingServlet</servlet-name>
+        <servlet-class>org.blog.controller.BookDeletingServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.BookDeletingServlet</servlet-name>
+        <url-pattern>/BookDeleting</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.BookUpdatingServlet</servlet-name>
+        <servlet-class>org.blog.controller.BookUpdatingServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.BookUpdatingServlet</servlet-name>
+        <url-pattern>/BookUpdating</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet>
+        <servlet-name>org.blog.controller.ReservationSearching</servlet-name>
+        <servlet-class>org.blog.controller.ReservationSearching</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.ReservationSearching</servlet-name>
+        <url-pattern>/ReservationSearching</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.ReservationActionServlet</servlet-name>
+        <servlet-class>org.blog.controller.ReservationActionServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.ReservationActionServlet</servlet-name>
+        <url-pattern>/ReservationActioning</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.ReservingServlet</servlet-name>
+        <servlet-class>org.blog.controller.ReservingServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.ReservingServlet</servlet-name>
+        <url-pattern>/Reserving</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>org.blog.controller.CancelReservationServlet</servlet-name>
+        <servlet-class>org.blog.controller.CancelReservationServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.CancelReservationServlet</servlet-name>
+        <url-pattern>/Canceling</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.ReturnBookServlet</servlet-name>
+        <servlet-class>org.blog.controller.ReturnBookServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.ReturnBookServlet</servlet-name>
+        <url-pattern>/Returning</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>org.blog.controller.LoginServlet</servlet-name>
+        <servlet-class>org.blog.controller.LoginServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet>
+    	<servlet-name>SearchingServlet</servlet-name>
+    	<display-name>SearchingServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.SearchingServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>ActionServlet</servlet-name>
+    	<display-name>ActionServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.ActionServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>DeleteServlet</servlet-name>
+    	<display-name>DeleteServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>UpdateServlet</servlet-name>
+    	<display-name>UpdateServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.UpdateServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>InsertServlet</servlet-name>
+    	<display-name>InsertServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.InsertServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>IndexServlet</servlet-name>
+    	<display-name>IndexServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.IndexServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>StaticSearchServlet</servlet-name>
+    	<display-name>StaticSearchServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.StaticSearchServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>StaticActionServlet</servlet-name>
+    	<display-name>StaticActionServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.StaticActionServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>StaticInsertServlet</servlet-name>
+    	<display-name>StaticInsertServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.StaticInsertServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>StaticDeleteServlet</servlet-name>
+    	<display-name>StaticDeleteServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.StaticDeleteServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>StaticUpdateServlet</servlet-name>
+    	<display-name>StaticUpdateServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.StaticUpdateServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>BookSearchingServlet</servlet-name>
+    	<display-name>BookSearchingServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.BookSearchingServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>BookInsertingServlet</servlet-name>
+    	<display-name>BookInsertingServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.BookInsertingServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>BookActionServlet</servlet-name>
+    	<display-name>BookActionServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.BookActionServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>BookDeletingServlet</servlet-name>
+    	<display-name>BookDeletingServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.BookDeletingServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>BookUpdatingServlet</servlet-name>
+    	<display-name>BookUpdatingServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.BookUpdatingServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>ReservationSearching</servlet-name>
+    	<display-name>ReservationSearching</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.ReservationSearching</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>ReservationActionServlet</servlet-name>
+    	<display-name>ReservationActionServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.ReservationActionServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>ReservingServlet</servlet-name>
+    	<display-name>ReservingServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.ReservingServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>CancelReservationServlet</servlet-name>
+    	<display-name>CancelReservationServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.CancelReservationServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<servlet-name>ReturnBookServlet</servlet-name>
+    	<display-name>ReturnBookServlet</display-name>
+    	<description></description>
+    	<servlet-class>org.blog.controller.ReturnBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>org.blog.controller.LoginServlet</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>SearchingServlet</servlet-name>
+    	<url-pattern>/SearchingServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>ActionServlet</servlet-name>
+    	<url-pattern>/ActionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>DeleteServlet</servlet-name>
+    	<url-pattern>/DeleteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>UpdateServlet</servlet-name>
+    	<url-pattern>/UpdateServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>InsertServlet</servlet-name>
+    	<url-pattern>/InsertServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>IndexServlet</servlet-name>
+    	<url-pattern>/IndexServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>StaticSearchServlet</servlet-name>
+    	<url-pattern>/StaticSearchServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>StaticActionServlet</servlet-name>
+    	<url-pattern>/StaticActionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>StaticInsertServlet</servlet-name>
+    	<url-pattern>/StaticInsertServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>StaticDeleteServlet</servlet-name>
+    	<url-pattern>/StaticDeleteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>StaticUpdateServlet</servlet-name>
+    	<url-pattern>/StaticUpdateServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>BookSearchingServlet</servlet-name>
+    	<url-pattern>/BookSearchingServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>BookInsertingServlet</servlet-name>
+    	<url-pattern>/BookInsertingServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>BookActionServlet</servlet-name>
+    	<url-pattern>/BookActionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>BookDeletingServlet</servlet-name>
+    	<url-pattern>/BookDeletingServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>BookUpdatingServlet</servlet-name>
+    	<url-pattern>/BookUpdatingServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>ReservationActionServlet</servlet-name>
+    	<url-pattern>/ReservationActionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>ReservingServlet</servlet-name>
+    	<url-pattern>/ReservingServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>CancelReservationServlet</servlet-name>
+    	<url-pattern>/CancelReservationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>ReturnBookServlet</servlet-name>
+    	<url-pattern>/ReturnBookServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
