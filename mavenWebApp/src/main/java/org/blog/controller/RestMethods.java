@@ -17,10 +17,16 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 public class RestMethods {
+	static Connection conn;
     public static ArrayList<Object> select(String id)
     {
         ArrayList<Object> result = new ArrayList<Object>();
-        Statement stmt = openConnection();
+        Statement stmt = null;
+        if(conn==null)
+        	stmt = openConnection();
+        else
+        	try{
+        	stmt = conn.createStatement();} catch(Exception e){}
         try
         {
             if(id.equals("all"))
@@ -71,7 +77,12 @@ public class RestMethods {
         ArrayList<Object> u1 = new ArrayList<Object>();
         try
         {
-            Statement stats = openConnection();
+            Statement stats = null;
+            if(conn==null)
+            	stats = openConnection();
+            else
+            	try{
+            	stats = conn.createStatement();} catch(Exception e){}
             ResultSet count = stats.executeQuery("select count(*) from users where id = "+id);
             int count1 = count.getInt(1);
             if(count1>0)
@@ -96,7 +107,12 @@ public class RestMethods {
         ArrayList<Object> u1 = new ArrayList<Object>();
         try
         {
-            Statement stmt = openConnection();
+            Statement stmt = null;
+            if(conn==null)
+            	stmt = openConnection();
+            else
+            	try{
+            	stmt = conn.createStatement();} catch(Exception e){}
             ResultSet userExists = stmt.executeQuery("select count(*) from users where username = '"+username+"'");
             int isNew = userExists.getInt(1);
             if(isNew<1)
@@ -131,7 +147,12 @@ public class RestMethods {
         {
             try
             {
-                Statement stats = openConnection();
+                Statement stats = null;
+                if(conn==null)
+                	stats = openConnection();
+                else
+                	try{
+                	stats = conn.createStatement();} catch(Exception e){}
                 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                 Date date = new Date();
 
@@ -154,7 +175,7 @@ public class RestMethods {
         try
         {
             Class.forName("org.sqlite.JDBC");
-            Connection conn = DriverManager.getConnection("jdbc:sqlite:/Users/keya/Database/test.db");
+            conn = DriverManager.getConnection("jdbc:sqlite:/Users/keya/Database/test.db");
             stmt = conn.createStatement();
 
         }
@@ -168,7 +189,12 @@ public class RestMethods {
     public static ArrayList<Object> selectBooks(String title)
     {
         ArrayList<Object> result = new ArrayList<Object>();
-        Statement stmt = openConnection();
+        Statement stmt = null;
+        if(conn==null)
+        	stmt = openConnection();
+        else
+        	try{
+        	stmt = conn.createStatement();} catch(Exception e){}
         try
         {
             if(title.equals("all"))
@@ -210,6 +236,7 @@ public class RestMethods {
         {
             System.out.println("Error: " + e.getMessage());
         }
+        
         return result;
     }
 
@@ -218,8 +245,12 @@ public class RestMethods {
         ArrayList<Object> u1 = new ArrayList<Object>();
         try
         {
-            Statement stmt = openConnection();
-            ResultSet userExists = stmt.executeQuery("select count(*) from books where book_name = '"+title+"'");
+            Statement stmt = null;
+            if(conn==null)
+            	stmt = openConnection();
+            else
+            	try{
+            	stmt = conn.createStatement();} catch(Exception e){}            ResultSet userExists = stmt.executeQuery("select count(*) from books where book_name = '"+title+"'");
             int isNew = userExists.getInt(1);
             if(isNew<1)
             {
@@ -253,7 +284,12 @@ public class RestMethods {
         ArrayList<Object> u1 = new ArrayList<Object>();
         try
         {
-            Statement stats = openConnection();
+            Statement stats = null;
+            if(conn==null)
+            	stats = openConnection();
+            else
+            	try{
+            	stats = conn.createStatement();} catch(Exception e){}
             ResultSet count = stats.executeQuery("select count(*) from books where book_id = "+id);
             int count1 = count.getInt(1);
             if(count1>0)
@@ -284,7 +320,12 @@ public class RestMethods {
 
         try
         {
-            Statement stats = openConnection();
+            Statement stats = null;
+            if(conn==null)
+            	stats = openConnection();
+            else
+            	try{
+            	stats = conn.createStatement();} catch(Exception e){}
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             Date date = new Date();
 
@@ -306,7 +347,12 @@ public class RestMethods {
     {
         ArrayList<Object> result = new ArrayList<Object>();
         title = title.replace('+',' ');
-        Statement stmt = openConnection();
+        Statement stmt = null;
+        if(conn==null)
+        	stmt = openConnection();
+        else
+        	try{
+        	stmt = conn.createStatement();} catch(Exception e){}
         try
         {
             if(title.equals("all"))
@@ -358,7 +404,12 @@ public class RestMethods {
     public static ArrayList<Object> reserving(String title, String name)
     {
         ArrayList<Object> result = new ArrayList<Object>();
-        Statement stmt = openConnection();
+        Statement stmt = null;
+        if(conn==null)
+        	stmt = openConnection();
+        else
+        	try{
+        	stmt = conn.createStatement();} catch(Exception e){}
         title = title.replace('+',' ');
         try
         {
@@ -380,13 +431,14 @@ public class RestMethods {
             }
             else
             {
+     
                 holds +=1;
-                ResultSet rs3 = stmt.executeQuery("select count(holder) from holds where holder = "+name);
+                ResultSet rs3 = stmt.executeQuery("select count(holder) from holds where holder = \'"+name+"\'");
                 int count = rs3.getInt(1);
-                ResultSet rs4 = stmt.executeQuery("select count(book_with) from reservation where book_with = "+name);
+                ResultSet rs4 = stmt.executeQuery("select count(book_with) from reservation where book_with = \'"+name+"\' and book_id = "+book_id);
                 int count1 = rs4.getInt(1);
                 if(count>0 || count1>0)
-                {
+                {              
                 	result.add("already");
                 }
                 else
@@ -411,7 +463,12 @@ public class RestMethods {
     public static ArrayList<Object> cancelingBook(String title, String name)
     {
         ArrayList<Object> result = new ArrayList<Object>();
-        Statement stmt = openConnection();
+        Statement stmt = null;
+        if(conn==null)
+        	stmt = openConnection();
+        else
+        	try{
+        	stmt = conn.createStatement();} catch(Exception e){}
         title = title.replace('+',' ');
         try
         {
@@ -446,8 +503,13 @@ public class RestMethods {
     public static ArrayList<Object> returningBook(String title, String name)
     {
         ArrayList<Object> result = new ArrayList<Object>();
-        Statement stmt = openConnection();
-
+        Statement stmt = null;
+        if(conn==null)
+        	stmt = openConnection();
+        else
+        	try{
+        	stmt = conn.createStatement();} catch(Exception e){}
+        
         title = title.replace('+',' ');
 
         try
@@ -505,8 +567,12 @@ public class RestMethods {
     public static ArrayList<Object> loginResult(String username, String passphrase)
     {
         ArrayList<Object> result = new ArrayList<Object>();
-        Statement stmt = openConnection();
-
+        Statement stmt = null;
+        if(conn==null)
+        	stmt = openConnection();
+        else
+        	try{
+        	stmt = conn.createStatement();} catch(Exception e){}
 
         try
         {
